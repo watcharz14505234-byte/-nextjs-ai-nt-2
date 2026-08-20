@@ -1,0 +1,1 @@
+import prisma from "../src/lib/prisma"; async function main() { try { const products = await prisma.product.findMany(); console.log("Products in DB:", products); } catch (e) { console.error(e); } } main();
