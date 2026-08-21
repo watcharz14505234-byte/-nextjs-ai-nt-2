@@ -4,6 +4,8 @@ import { connection } from "next/server";
 
 // http://localhost:3000/product
 
+export const dynamic = "force-dynamic";
+
 export default async function ProductPage() {
   type ProductCard = { id: number; name: string; price: number; picture: string };
   let products: ProductCard[] = [];
