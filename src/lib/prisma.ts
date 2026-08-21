@@ -4,7 +4,13 @@ import { PrismaMariaDb } from "@prisma/adapter-mariadb"
 import { PrismaClient } from "../../generated/prisma/client"
 
 const prismaClientSingleton = () => {
-  const adapter = new PrismaMariaDb(process.env.DATABASE_URL!);
+  if (!process.env.DATABASE_URL) {
+    console.warn("DATABASE_URL is not defined. Prisma client will not be instantiated correctly.");
+    return new PrismaClient({ 
+      adapter: new PrismaMariaDb("mysql://root:Admin_1jj395qu@host.docker.internal:3306/akenarin_db") 
+    });
+  }
+  const adapter = new PrismaMariaDb(process.env.DATABASE_URL);
   return new PrismaClient({ adapter })
 }
 

@@ -1,6 +1,7 @@
-import FeaturesProduct from "@/components/features-product";
 import prisma from "@/lib/prisma";
-import { connection } from "next/server";
+import FeaturesProduct from "@/components/features-product";
+
+
 
 // http://localhost:3000/product
 
@@ -9,9 +10,9 @@ export default async function ProductPage() {
   let products: ProductCard[] = [];
   let loadError = false;
 
-  try {
-    await connection();
-    const result = await prisma.product.findMany();
+   try {
+     const result = await prisma.product.findMany();
+
     products = result.map((p) => ({
       ...p,
       price: p.price ? Number(p.price) : 0,
