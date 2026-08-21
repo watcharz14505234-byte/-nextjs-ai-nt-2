@@ -64,7 +64,7 @@ export default function ContactPage() {
     <main className="mx-auto max-w-(--breakpoint-xl) px-4 py-14 sm:px-6 lg:px-8 lg:py-20">
       <header className="max-w-2xl">
         <h1 className="text-4xl font-medium tracking-[-0.045em] sm:text-[2.75rem]/[1.2]">
-          ติดต่อเรา
+           Contact Us
         </h1>
         <p className="mt-3 text-pretty text-lg text-muted-foreground tracking-[-0.01em] sm:text-xl">
           สอบถามข้อมูลเพิ่มเติมหรือติดต่อทีมงาน เรายินดีให้ความช่วยเหลือ
